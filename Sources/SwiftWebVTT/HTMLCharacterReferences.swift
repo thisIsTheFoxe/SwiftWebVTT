@@ -79,7 +79,7 @@ internal extension Codepoints {
 
 fileprivate extension Decodable {
     static func loadJSONArray(filename: String) throws -> [Self] {
-        let bundle = Bundle(for: WebVTTParser.self)
+        let bundle = Bundle.module
         let url = bundle.url(forResource: filename, withExtension: "json")!
         let data = try Data(contentsOf: url)
         return try JSONDecoder().decode([Self].self, from: data)
