@@ -27,7 +27,7 @@ In the `.xcodeproj` > General > Add Framework > Add Package Dependency > enter r
 {...}
 dependencies: [
     // Dependencies declare other packages that this package depends on.
-    .package(url: "https://github.com/thisIsTheFoxe/SwiftWebVTT", from: "0.0.0")
+    .package(url: "https://github.com/thisIsTheFoxe/SwiftWebVTT", from: "0.1.0")
 ],
 {...}
 ```
