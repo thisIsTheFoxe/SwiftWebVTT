@@ -15,7 +15,17 @@ public struct WebVTT {
     public let cues: [Cue]
     
     public init(cues: [Cue]) {
-        self.cues = cues
+        self.cues = cues.sorted(by: { $0.timeStart > $1.timeStart })
+    }
+    
+    /// Returns the cue most apropriate for a given timestamp.
+    ///
+    /// Assumes the array is sorted.
+    ///
+    /// - Parameter timestamp: The timestamp (e.g. current timestamp)
+    /// - Returns: The cue that is valid for that timestamp if one exists.
+    public func firstCue(for timestamp: TimeInterval) -> Cue? {
+        cues.first(where: { timestamp > $0.timeStart })
     }
 }
 
