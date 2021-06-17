@@ -1,4 +1,5 @@
 # Swift WebVTT
+This is a fork of [auramagi/SwiftWebVTT](https://github.com/auramagi/SwiftWebVTT) for added SPM support.
 
 ## Overview
 
@@ -16,16 +17,22 @@ As part of parsing text content of cues, this project implements a custom parser
 Saving files in WebVTT format and showing cues on screen is considered outside of scope of this project.
 
 
-## Installation
+## Add Package
 
-#### Carthage
+#### In XCProjects
+In the `.xcodeproj` > General > Add Framework > Add Package Dependency > enter repo URL.
 
-Put `github "auramagi/SwiftWebVTT"` in your `Cartfile`.
+### In other packages
+```swift
+{...}
+dependencies: [
+    // Dependencies declare other packages that this package depends on.
+    .package(url: "https://github.com/thisIsTheFoxe/SwiftWebVTT", from: "0.0.0")
+],
+{...}
+```
 
-#### CocoaPods
-
-Put `pod 'SwiftWebVTT'` in your `Podfile`.
-
+For more details of the installation and usage of Swift Package Manager, visit [its official website](https://swift.org/package-manager/).
 
 ## Usage
 
